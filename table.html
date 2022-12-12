@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Python-cod</title>
+    <link rel="stylesheet" href="/bootstrap.min.css" />
+    <link rel="stylesheet" href="/main.css" />
+</head>
+<body>
+  <ul class="nav nav-tabs bg-success shadow rounded sticky-sm-top ">
+    <li class="nav-item">
+      <a class="nav-link text-white" aria-current="page" href="../index">Главная</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-white" href="../data">Подключение и обработка</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link text-white" href="../text">Работа с данными</a>
+      </li> 
+    <li class="nav-item">
+      <a class="nav-link active link-dark fw-bolder" href="../table">Визуализация</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-white" href="../photo">Модель</a>
+    </li>
+  </ul>
+
+  <div class="container gx-4 py-3">
+    <p class="text-start fs-2 fw-bold text-success">Часть 1.1 Подготовка обучающей  и тестовой выборок</p>
+    <p class="text-start fw-bolder">Импорт библиотек</p>
+    <p>from sklearn.linear_model import LinearRegression, GammaRegressor</p>
+    <p>import pandas as pd</p>
+    <p>import numpy as np</p>
+    <p>import matplotlib.pyplot as plt</p>
+    <p class="text-start fw-bolder">Открываем БД, и ставим разделитель, что бы можно было вывести БД</p>
+    <p>rd = pd.read_csv('test_ses.csv', delimiter=',')</p>
+    <p>.</p>
+    <p class="text-start fw-bolder">Выводим графики регрессии:</p>
+    <p class="text-start fw-bolder">Инициализация метода регрессии</p>
+    <p>model = LinearRegression() </p>
+    <p class="text-start fw-bolder">#Присваивание значений к переменной X из колонки с индексом 1</p>
+    <p>#x = rd.iloc[:, 1].values.reshape(-1, 1)</p>
+    <p class="text-start fw-bolder">#Присваивание значений к переменной Y из колонки с индексом 1</p>
+    <p>#y = rd.iloc[:, 0].values.reshape(-1, 1)</p>
+    <p class="text-start fw-bolder">#Выполняем подгонку линейной регрессии</p>
+    <p>#model.fit(x,y)</p>
+    <p class="text-start fw-bolder">#Создаем переменную, которая будет равна предсказанному 'y'</p>
+    <p>#y_predict = model.predict(x)</p>
+    <p class="text-start fw-bolder">#Выбираем тип графика, и берем значения x, y</p>
+    <p>#plt.scatter(x, y)</p>
+    <p class="text-start fw-bolder">#Создаем линию на графике, по которой будет проводится регрессионный анализ</p>
+    <p>#plt.plot(x, y_predict, color='red')</p>
+    <p class="text-start fw-bolder">#Выводим линейную регрессию</p>
+    <p>#plt.show()</p>
+    <p>.</p>
+    <p>x = rd.iloc[:, 0].values.reshape(-1, 1)</p>
+    <p>y = rd.iloc[:, 0].values.reshape(-1, 1)</p>
+    <p>model.fit(x, y)</p>
+    <p>y_predict = model.predict(x)</p>
+    <p>.</p>
+    <p>plt.scatter(x, y)</p>
+    <p>plt.plot(x, y_predict, color='purple')</p>
+    <p>plt.show()</p>
+    <p>.</p>
+    <p>#model2 = GammaRegressor()</p>
+    <p>#x = rd.iloc[:, 0].values.reshape(-1, 1)</p>
+    <p>#y = rd.iloc[:, 1].values.reshape(-1, 1)</p>
+    <p>#model2.fit(x, y)</p>
+    <p>#y_predict = model2.predict(x)</p>
+    <p>.</p>
+    <p>#plt.scatter(x, y)</p>
+    <p>#plt.plot(x, y, color="green")</p>
+    <p>#plt.plot(x, y_predict, color="red")</p>
+    <p>#plt.show()</p> 
+      
+  </div>
+    
+</body>
+</html>
